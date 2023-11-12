@@ -37,4 +37,9 @@
         android:name="ru.mirea.sukhovav.mireaproject.FirebaseFragment"
         android:label="fragment_firebase"
         tools:layout="@layout/fragment_firebase" />
+    <fragment
+        android:id="@+id/anyDesk"
+        android:name="ru.mirea.sukhovav.mireaproject.AnyDesk"
+        android:label="fragment_any_desk"
+        tools:layout="@layout/fragment_any_desk" />
 </navigation>
