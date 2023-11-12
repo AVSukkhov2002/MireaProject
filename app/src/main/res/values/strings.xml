@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">MireaProject</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_information">Information</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="information">Хачапу́ри — блюдо грузинской кухни, национальное мучное изделие, булка с начинкой из сыра. В 2019 году хачапури присвоен статус нематериального памятника культурного наследия Грузии.</string>
+    <string name="information_eat">хачипури</string>
+    <string name="indormation_description_two">Самса́ или само́са — самостоятельное блюдо, схожее с пирожком, произвольной формы с начинкой.</string>
+    <string name="informationEatTwo">самса</string>
+    <string name="web">web</string>
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate
+with Firebase.</string>
+    <string name="hint_user_id">User ID</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified:
+%2$b)</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+
+    <string name="error_sign_in_failed">Sign in failed, see logs for de-
+tails.</string>
+</resources>
