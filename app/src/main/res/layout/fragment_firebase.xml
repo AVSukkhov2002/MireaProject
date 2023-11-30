@@ -7,8 +7,9 @@
     android:background="#B7D1FF"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <EditText
+        android:id="@+id/EmailStr"
+        android:contentDescription="Enter How Much Cookies You Want"
         android:layout_width="232dp"
         android:layout_height="124dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +65,7 @@
         android:id="@+id/EmailPasswordFields"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="editTextPassword,editTextEmailAddress" />
+        app:constraint_referenced_ids="PasswordStr,editTextEmailAddress" />
 
     <TextView
         android:id="@+id/titletextview"
@@ -79,18 +80,21 @@
         app:layout_constraintVertical_bias="0.28" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/PasswordStr"
+        android:text="1"
+        android:minHeight="48dp"
         android:layout_width="330dp"
         android:layout_height="35dp"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/password"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintVertical_bias="0.667"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/editTextEmailAddress"
@@ -99,6 +103,8 @@
         android:ems="10"
         android:hint="email"
         android:inputType="textPersonName"
+        android:text="1"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

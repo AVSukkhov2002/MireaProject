@@ -42,4 +42,9 @@
         android:name="ru.mirea.sukhovav.mireaproject.AnyDesk"
         android:label="fragment_any_desk"
         tools:layout="@layout/fragment_any_desk" />
+    <activity
+        android:id="@+id/activityFireBaseBinding"
+        android:name="ru.mirea.sukhovav.mireaproject.ActivityFireBaseBinding"
+        android:label="activity_fire_base"
+        tools:layout="@layout/activity_fire_base" />
 </navigation>

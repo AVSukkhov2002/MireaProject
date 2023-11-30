@@ -1,8 +1,19 @@
 package ru.mirea.sukhovav.mireaproject;
 
+import static android.app.PendingIntent.getActivity;
+
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -14,6 +25,9 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ru.mirea.sukhovav.mireaproject.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,9 +35,15 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    ListView listView;
+    TextView text;
+    Button button;
+    private static final String TAG = "myLogs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        foo();
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -62,5 +82,50 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void foo(){
+        int flags = PackageManager.GET_META_DATA |
+                PackageManager.GET_SHARED_LIBRARY_FILES |
+                PackageManager.GET_UNINSTALLED_PACKAGES;
+
+
+        @SuppressLint("QueryPermissionsNeeded") List<PackageInfo> ril = MainActivity.this.getPackageManager().getInstalledPackages(flags);
+        List<String> componentList = new ArrayList<String>();
+        int i = 0;
+
+
+        int flag = 0;
+        // get size of ril and create a list
+        String[] apps = new String[ril.size()];
+        for (PackageInfo ri : ril) {
+
+            apps[i] = ri.applicationInfo.loadLabel(MainActivity.this.getPackageManager()).toString();
+
+            if(ri.applicationInfo.loadLabel(MainActivity.this.getPackageManager()).toString().equals("AnyDesk")){
+                flag = 1;
+            }
+            i++;
+
+        }
+
+        Log.d(TAG, "Installed package FLAG :" + flag);
+
+
+        if(flag == 1){
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Важное сообщение!")
+                    .setMessage("Найдена программа удалённого доступа!")
+                    .setPositiveButton("Закрыть приложение", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Закрываем диалоговое окно
+                            System.exit(0);
+                        }
+                    });
+
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        }
     }
 }

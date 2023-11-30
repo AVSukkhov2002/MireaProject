@@ -30,7 +30,7 @@
             />
 
         <item
-            android:id="@+id/firebaseFragment"
+            android:id="@+id/activityFireBaseBinding"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="firebase"
             />
